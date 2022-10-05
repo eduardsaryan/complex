@@ -14,7 +14,7 @@ after_success:
   - docker build -t edsaryan/multi-nginx  ./nginx
   - docker build -t edsaryan/multi-server ./server
   - docker build -t edsaryan/multi-worker ./worker
-  - echo "DOCKER_PASSWORD" | docker login -u "DOCKER_ID" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push edsaryan/multi-client
   - docker push edsaryan/multi-nginx
   - docker push edsaryan/multi-server
