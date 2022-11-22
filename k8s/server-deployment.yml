@@ -28,5 +28,10 @@ spec:
               value: postgres
             - name: PGPORT
               value: 5432
+            - name: POSTGRES_PASSWORD
+              valueFrom: 
+                secretKeyRef: 
+                  name: pgpassword
+                  key: PGPASSWORD
           ports:
             - containerPort: 5000
